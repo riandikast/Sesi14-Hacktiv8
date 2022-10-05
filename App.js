@@ -28,9 +28,9 @@ export default function App() {
   }, []);
 
   const saveNickname = async () => {
-    setNickname(show);
     try {
-      await AsyncStorage.setItem('@nickname', nickname);
+      await setNickname(show);
+      await AsyncStorage.setItem('@nickname', show);
     } catch (err) {
       console.log(err);
     }
